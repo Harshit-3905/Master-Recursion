@@ -6,7 +6,7 @@ class Family_Structure {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         long k = in.nextLong();
-        int x = Solution(k);
+        int x = Solution(n, k);
         if (x == 1)
             System.out.println("Male");
         else
@@ -14,12 +14,12 @@ class Family_Structure {
         in.close();
     }
 
-    static int Solution(long k) {
+    static int Solution(int n, long k) {
         if (k == 1)
             return 1;
         if (k % 2 == 0)
-            return 1 - Solution((k + 1) / 2);
+            return 1 - Solution(n, (k + 1) / 2);
         else
-            return Solution((k + 1) / 2);
+            return Solution(n, (k + 1) / 2);
     }
 }
